@@ -1,0 +1,27 @@
+from fpdf import FPDF
+
+pdf = FPDF()
+pdf.add_page()
+pdf.set_font("Arial", size=12)
+
+content = """
+Chemistry Concepts for StudyMate:
+
+1. Atomic Structure:
+   Atoms consist of protons, neutrons, and electrons.
+   The number of protons defines the element.
+
+2. Chemical Bonds:
+   Ionic bonds are formed by transfer of electrons.
+   Covalent bonds are formed by sharing electrons.
+
+3. Acids and Bases:
+   Acids donate protons (H+), bases accept protons.
+   pH measures the acidity or alkalinity of a solution.
+"""
+
+pdf.multi_cell(0, 10, content)
+
+pdf.output("chemistry_sample.pdf", "F")  # 'F' for file output
+
+print("PDF 'chemistry_sample.pdf' created successfully!")
