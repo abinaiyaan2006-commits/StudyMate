@@ -1,0 +1,35 @@
+from fpdf import FPDF
+
+pdf = FPDF()
+pdf.add_page()
+pdf.set_font("Arial", size=12)
+
+content = """
+Math Concepts for StudyMate:
+
+1. Algebra:
+   - Solving equations: 2x + 5 = 15 -> x = 5
+   - Quadratic equations: ax^2 + bx + c = 0
+
+2. Geometry:
+   - Area of circle: A = pi * r^2
+   - Perimeter of rectangle: P = 2 * (l + w)
+
+3. Trigonometry:
+   - sin(theta), cos(theta), tan(theta)
+   - Pythagoras theorem: a^2 + b^2 = c^2
+
+4. Calculus:
+   - Derivative of f(x) = x^2 -> f'(x) = 2x
+   - Integral of f(x) = 2x -> x^2 + C
+
+5. Probability:
+   - P(A) = Number of favorable outcomes / Total outcomes
+
+This PDF is created for testing StudyMate's PDF-based Q&A system.
+"""
+
+pdf.multi_cell(0, 10, content)
+pdf.output("math_sample.pdf")
+
+print("PDF 'math_sample.pdf' created successfully!")
