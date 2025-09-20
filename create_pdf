@@ -1,0 +1,17 @@
+# Create PDF object
+pdf = FPDF()
+pdf.add_page()
+pdf.set_font("Arial", size=12)
+
+# Add some sample content
+content = """
+StudyMate is an AI-powered PDF-based Q&A system for students.
+It can upload PDFs, extract text, and answer questions.
+This is a sample PDF for testing.
+"""
+pdf.multi_cell(0, 10, content)
+
+# Save the PDF in backend folder
+pdf.output("myfile.pdf")
+
+print("PDF created successfully!")+
